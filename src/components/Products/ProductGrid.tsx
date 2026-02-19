@@ -12,7 +12,6 @@ interface ProductGridProps {
 export default function ProductGrid({
   onProductSelect,
   onAddToCart,
-  onOrderFormOpen,
 }: ProductGridProps) {
   const nonBraceletProducts = products.filter((p) => p.collection !== 'bracelets');
 
@@ -48,14 +47,6 @@ export default function ProductGrid({
           </div>
         )}
 
-        <div className="text-center">
-          <button
-            onClick={onOrderFormOpen}
-            className="px-12 py-4 bg-[#243247] text-[#e7ddcc] font-bold text-lg rounded-lg hover:bg-[#e7ddcc] hover:text-[#243247] transition-all duration-300 transform hover:scale-105"
-          >
-            أُطلب قطعتك
-          </button>
-        </div>
       </div>
     </section>
   );

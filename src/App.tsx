@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Hero from './components/Hero/Hero';
 import CollectionGrid from './components/Collections/CollectionGrid';
 import ProductGrid from './components/Products/ProductGrid';
@@ -20,6 +20,13 @@ function App() {
 
   const shopRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.location.hash === '#order') {
+      setShowOrderForm(true);
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
 
   const handleNavigate = (section: 'home' | 'shop' | 'story' | 'contact') => {
     if (section === 'shop' && shopRef.current) {

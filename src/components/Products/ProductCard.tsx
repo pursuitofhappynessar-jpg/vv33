@@ -56,17 +56,16 @@ export default function ProductCard({
           {product.descriptionAr}
         </p>
 
-        <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-[#243247]">{product.price} جنيه</span>
-          {!isDisabled && (
+        {!isDisabled && (
+          <div className="flex justify-center">
             <button
               onClick={() => onQuickView?.(product.id)}
               className="px-4 py-2 bg-[#243247] text-[#e7ddcc] font-semibold rounded-lg hover:bg-[#e7ddcc] hover:text-[#243247] transition-all duration-300"
             >
               التفاصيل
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
